@@ -12,8 +12,7 @@ Flip the cards, test your memory, and match all the pairs to win! 🎯
 
 ## 🧩 Features
 - 🎮 Flip and match pairs of cards  
-- 🔄 Automatic restart after completing all pairs  
-- ⏱️ Optional move or timer counter (if added)  
+- 🔄 Automatic restart after completing all pairs    
 - 🎨 Beautiful card flipping animations  
 - 📱 Fully responsive and mobile-friendly  
 
