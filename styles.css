@@ -1,0 +1,251 @@
+/*Reset default styles and set base font*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:monospace;
+}
+/*center the container in the page */
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a3c2f;
+}
+/*Main game container*/
+.container
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    background: #0d614b;
+    padding: 40px 60px;
+}
+/*Game title*/
+h2
+{
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+/*Reset button styling*/
+.reset
+{
+    padding: 15px 20px;
+    color:#267c65;
+    background: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+/*change color when button is foucsed*/
+.reset:focus
+{
+    color:#fff;
+    background: #267c65;
+}
+/* Game board styling */
+.game
+{
+    width: 430px;
+    height:430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    transform-style:preserve-3d ;
+    perspective: 500px;
+}
+/* Each card box */
+.item
+{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: #fff;
+    transform: rotateY(180deg);
+transition:0.25s ;
+}
+/* Back face of each card */
+.item .boxOpen
+{
+    transform: rotateY(0deg);
+}
+/* Flip the box when opened or matched */
+.item::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #209d7b;
+    transition: 0.25s;
+    transform: rotatey(0deg);
+    backface-visibility: hidden;
+}
+ 
+.boxOpen::after,
+.boxMatch::after
+{
+    transform:rotateY( 180deg);
+}
+/* Responsive design starts here */
+
+
+/* ---------- For large desktops ---------- */
+@media (min-width: 1200px) {
+  .container {
+    padding: 50px 70px;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  .game {
+    width: 450px;
+    height: 450px;
+  }
+
+  .item {
+    width: 100px;
+    height: 100px;
+    font-size: 3em;
+  }
+}
+
+/* ---------- For tablets and iPads (portrait) ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 30px 50px;
+    gap: 25px;
+  }
+
+  h2 {
+    font-size: 2.4em;
+    text-align: center;
+  }
+
+  .game {
+    width: 380px;
+    height: 380px;
+    gap: 10px;
+  }
+
+  .item {
+    width: 85px;
+    height: 85px;
+    font-size: 2.3em;
+  }
+
+  .reset {
+    font-size: 1.2em;
+    padding: 12px 18px;
+  }
+}
+
+/* ---------- For tablets and iPads (landscape) ---------- */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .container {
+    padding: 40px 60px;
+    gap: 25px;
+  }
+
+  h2 {
+    font-size: 2.6em;
+  }
+
+  .game {
+    width: 420px;
+    height: 420px;
+    gap: 10px;
+  }
+
+  .item {
+    width: 90px;
+    height: 90px;
+    font-size: 2.6em;
+  }
+
+  .reset {
+    font-size: 1.3em;
+  }
+}
+
+/* ---------- For small tablets and large phones ---------- */
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .game {
+    width: 300px;
+    height: 300px;
+    gap: 8px;
+  }
+
+  .item {
+    width: 68px;
+    height: 68px;
+    font-size: 2em;
+  }
+
+  .reset {
+    font-size: 1.1em;
+    padding: 10px 15px;
+  }
+}
+
+/* ---------- For small phones ---------- */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.6em;
+  }
+
+  .game {
+    width: 250px;
+    height: 250px;
+    gap: 6px;
+  }
+
+  .item {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8em;
+  }
+
+  .reset {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+
+  .container {
+    padding: 18px;
+  }
+}
