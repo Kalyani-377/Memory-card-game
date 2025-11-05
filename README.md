@@ -6,7 +6,7 @@ Flip the cards, test your memory, and match all the pairs to win! 🎯
 ---
 
 ## 🚀 Live Demo  
-👉 [Play the Game Here](https://yourusername.github.io/memory-card-game/)  
+👉 [Play the Game Here](https://kalyani-377.github.io/Memory-card-game/)  
  
 ---
 
